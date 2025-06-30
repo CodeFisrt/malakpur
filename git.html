@@ -1,1 +1,111 @@
-git clone
+Git Workflow: Cloning, Branching,
+Committing
+This document outlines a basic Git workflow, covering cloning a repository, pulling updates
+from the main branch, creating and checking out new branches, staging changes, and
+committing those changes with a descriptive message. This workflow is fundamental for
+collaborative software development using Git.
+Cloning a Repository
+The first step in working with a Git repository is often to clone it to your local machine. This
+creates a local copy of the entire repository, including all branches and history.
+git clone <repository_url>
+Replace <repository_url> with the actual URL of the Git repository you want to clone. For
+example:
+git clone https://github.com/username/repository.git
+This command will create a directory with the same name as the repository in your current
+working directory.
+Pulling Updates from the Main Branch
+Before starting any work, it's crucial to ensure your local repository is up-to-date with the
+main branch (usually named main or master). This prevents conflicts and ensures you're
+building upon the latest codebase.
+git pull origin main
+This command fetches the latest changes from the main branch of the remote repository
+named origin and merges them into your current branch. If you are on the main branch, this
+will update your local main branch. If you are on another branch, it will attempt to merge the
+changes from origin/main into your current branch.
+Creating a New Branch
+When working on a new feature or bug fix, it's best practice to create a new branch. This
+isolates your changes from the main codebase and allows for easier collaboration and code
+review.
+git branch <branch-name>
+Replace <branch-name> with a descriptive name for your branch, such as
+feature/new-feature or bugfix/issue-123. For example:
+git branch feature/add-login
+This command creates a new branch with the specified name, but it doesn't switch you to
+that branch.
+Checking Out a Branch
+After creating a new branch, you need to switch to it to start working on it. This is done using
+the checkout command.
+git checkout <branch-name>
+Replace <branch-name> with the name of the branch you want to switch to. For example:
+git checkout feature/add-login
+Alternatively, you can create and checkout a new branch in a single step using the -b flag:
+git checkout -b <branch-name>
+This command creates a new branch with the specified name and immediately switches you
+to it.
+Staging Changes
+Before committing your changes, you need to stage them. Staging tells Git which changes
+you want to include in the next commit. You can stage changes using the git add command
+or through a graphical interface like the "Source Control" panel in many IDEs.
+Using the Command Line:
+To stage all modified and new files in your current directory and its subdirectories:
+git add .
+To stage a specific file:
+git add <file-name>
+Replace <file-name> with the name of the file you want to stage. For example:
+git add src/components/Login.js
+Using a Graphical Interface:
+Most IDEs with Git integration provide a visual interface for staging changes. Typically, you'll
+see a list of modified files in a "Source Control" or "Changes" panel. You can then select the
+files you want to stage and click a button or icon (often a "+" icon) to add them to the staging
+area.
+Committing Changes
+Once you've staged your changes, you can commit them. A commit is a snapshot of your
+changes at a specific point in time. It's essential to write a clear and concise commit message
+that describes the changes you've made.
+git commit -m "Your commit message here"
+Replace "Your commit message here" with a descriptive message. For example:
+git commit -m "feat: Implement user login functionality"
+Commit Message Guidelines:
+• Use a concise and descriptive subject line: Keep the subject line short (around 50
+characters) and to the point.
+• Use the imperative mood: Write the subject line as if you're giving a command (e.g.,
+"Fix bug" instead of "Fixed bug").
+• Capitalize the subject line: Start the subject line with a capital letter.
+• Separate the subject line from the body with a blank line: If you need to provide
+more details, add a body to the commit message after a blank line.
+• Wrap the body at 72 characters: Keep the lines in the body of the commit message
+relatively short for readability.
+• Explain the why and what, not the how: Focus on the reason for the change and
+what it accomplishes, rather than the specific implementation details.
+By following these steps, you can effectively manage your code using Git and collaborate
+with others on software development projects. Remember to regularly pull updates from the
+main branch and create descriptive commit messages to maintain a clean and
+understandable commit history.
+Clone
+Repository
+Commit
+Changes
+Create New
+Branch
+Document changes
+clearly for future
+reference
+Establish a separate
+line of development
+Git Workflow Management
+Initiate a local copy
+of the project
+Integrate changes
+from the main
+branch
+Prepare
+modifications for
+commit
+Pull Updates
+Record
+modifications with a
+message
+Stage Changes Write
+Descriptive
+Commit
+Messages
